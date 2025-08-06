@@ -101,10 +101,10 @@ const iconosCarrusel = [
 
       <h2>Framework que domino</h2>
       <div class="tarjetas" >
-        <div   class="tarjeta":class="item.nombre.toLowerCase().replace(/\s+/g, '')"  v-for="item in habilidades" :key="item.nombre" >
+        <div class="tarjeta" v-for="item in habilidades" :key="item.nombre" >
           <div class="icono-grande">
             <font-awesome-icon
-              v-if="Array.isArray(item.icono)" :icon="item.icono":style="{ color: item.color }"
+              v-if="Array.isArray(item.icono)" :icon="item.icono" :style="{ color: item.color }"
             />
           </div>
           <div class="contenido-tarjeta">
@@ -135,6 +135,8 @@ const iconosCarrusel = [
 
 <style scoped>
 .layout {
+  max-width: 1200px;
+  margin: 0 auto;
   display: flex;
   gap: 2rem;
   background: #0f0f0f;
@@ -145,7 +147,6 @@ const iconosCarrusel = [
   box-sizing: border-box;
 }
 
-/* Columna izquierda */
 .perfil {
   background: #1e1e1e;
   padding: 2rem 1.5rem;
@@ -169,7 +170,7 @@ h2 {
   color: #f9a826;
   font-weight: bold;
   border-color: rgb(241, 227, 227);
-  text-align: left; /* Alinea texto a la izquierda */
+  text-align: left;
 }
 
 .profesion {
@@ -189,6 +190,7 @@ h2 {
   padding: 0.6rem;
   border-radius: 10px;
 }
+
 .contacto a {
   color: #fffefb;
   text-align: left;
@@ -222,7 +224,6 @@ h2 {
   font-size: 0.85rem;
 }
 
-/* Columna derecha */
 .contenido {
   flex: 1;
   padding: 2rem;
@@ -252,7 +253,6 @@ h2 {
   color: #ffffff;
 }
 
-/* Tarjetas */
 .tarjetas {
   display: flex;
   flex-wrap: wrap;
@@ -280,6 +280,7 @@ h2 {
   box-shadow: 0 8px 20px rgba(247, 198, 94, 0.7);
   cursor: pointer;
 }
+
 .tarjeta.laravel:hover {
   box-shadow:
     0 0 15px 5px rgba(245, 82, 71, 0.6),
@@ -337,10 +338,11 @@ h2 {
     transform: rotate(0deg);
   }
 }
+
 .barra-nivel {
   width: 100%;
   height: 12px;
-  background-color: #444; /* Fondo oscuro para la barra */
+  background-color: #444;
   border-radius: 8px;
   margin-top: 0.7rem;
   overflow: hidden;
@@ -352,7 +354,6 @@ h2 {
   transition: width 0.5s ease;
 }
 
-/* Carrusel */
 .carrusel-contenedor {
   overflow: hidden;
   margin-top: 5rem;
@@ -409,6 +410,8 @@ h2 {
   .tarjeta {
     flex-direction: column;
     align-items: flex-start;
+    flex: 1 1 100%;
+    max-width: 100%;
   }
 
   .icono-grande {
@@ -426,3 +429,4 @@ h2 {
   }
 }
 </style>
+

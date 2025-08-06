@@ -40,19 +40,32 @@ const toggleMenu = () => {
 /* Contenedor principal */
 .navbar {
   padding: 1rem 2rem;
-  backdrop-filter: blur(12px);
   position: sticky;
   top: 0;
   z-index: 1000;
-  background-color: rgba(0, 0, 0, 0.6);
+  background: rgba(255, 255, 255, 0.05); /* fondo translúcido */
+  backdrop-filter: blur(12px) saturate(180%);
+  -webkit-backdrop-filter: blur(12px) saturate(180%);
+  border: none; /* sin bordes visibles */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* sombra muy suave */
+  border-radius: 0; /* sin esquinas redondeadas */
 }
 
 .navbar-container {
   max-width: 1200px;
   margin: 0 auto;
   display: flex;
-  justify-content: space-between;
+  justify-content: center; /* centra el contenido horizontalmente */
   align-items: center;
+}
+
+.nav-list {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  justify-content: center;
 }
 
 /* Botón hamburguesa */
