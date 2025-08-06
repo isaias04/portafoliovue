@@ -253,12 +253,13 @@ h2 {
   color: #ffffff;
 }
 .correo {
-  word-break: break-word;
-  overflow-wrap: break-word;
-  white-space: normal;     /* Asegura que haga salto de línea */
+  white-space: nowrap;       /* No hace salto de línea, mantiene todo en una sola línea */
+  overflow: hidden;          /* Oculta el texto que se salga */
+  text-overflow: ellipsis;   /* Muestra "..." si no cabe todo */
   width: 100%;
-  font-size: 0.9rem;       /* Ajusta tamaño si es necesario */
+  font-size: 0.9rem;
 }
+
 
 .tarjetas {
   display: flex;
@@ -415,9 +416,9 @@ h2 {
     gap: 1rem;
   }
   .correo {
-    font-size: 0.85rem;
-    display: block;
-    white-space: normal;
+    white-space: normal;     /* Permite saltos de línea */
+    overflow-wrap: break-word;
+    word-break: break-word;
   }
 
   .layout {
