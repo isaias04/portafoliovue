@@ -312,6 +312,14 @@ h2 {
 .contenido-tarjeta {
   flex: 1;
   padding-left: 1rem;
+  word-wrap: break-word;  
+  overflow-wrap: break-word;
+  word-break: break-word;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  color: #f3f3f3;
 }
 
 .titulo-habilidad {
