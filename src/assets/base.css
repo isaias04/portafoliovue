@@ -107,6 +107,19 @@ section h3{
 }
 /* Responsive: móviles */
 @media (max-width: 768px) {
+   .tarjetas {
+    flex-direction: column; /* Apilar verticalmente */
+    gap: 1rem;              /* Separación cómoda */
+  }
+  .tarjeta {
+    flex: 1 1 100% !important;   /* Que ocupe todo el ancho disponible */
+    max-width: 100% !important;
+    margin-bottom: 1rem;
+  }
+  
+  body {
+    font-size: 14px;
+    }
   section {
     padding: 1rem;
     margin: 1rem 0;
