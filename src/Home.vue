@@ -84,7 +84,7 @@ const iconosCarrusel = [
         </div>
         <div class="contacto-detalle">
           <small>{{ contacto.tipo }}</small>
-          <p><a :href="contacto.url" target="_blank">{{ contacto.valor }}</a></p>
+          <p class="correo"><a :href="contacto.url" target="_blank">{{ contacto.valor }}</a></p>
         </div>
       </div>
     </aside>
