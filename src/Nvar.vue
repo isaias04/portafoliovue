@@ -138,8 +138,13 @@ const toggleMenu = () => {
 
 /* Responsive */
 @media (max-width: 768px) {
+  .navbar {
+    background: rgba(242, 102, 9, 0.9); /* fondo sólido oscuro en móvil */
+    backdrop-filter: none; /* quitar blur en móvil */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
+  }
   .navbar-container {
-    justify-content: flex-end; /* menú hamburguesa alineado a la derecha en móvil */
+    justify-content: flex-end;
   }
 
   .hamburger {
@@ -147,17 +152,17 @@ const toggleMenu = () => {
   }
 
   .nav-list {
-    position: absolute;
-    top: 70px;
-    right: 0;  /* alineado al costado derecho */
-    left: auto;
+    position: absolute; /* posición relativa al navbar */
+    top: 70px;          /* justo debajo del navbar */
+    right: 0;
+    left: 0;            /* ancho completo */
+    background: rgba(0, 0, 0, 0.95); /* fondo oscuro */
     flex-direction: column;
-    background: rgba(0, 0, 0, 0.9);
-    padding: 1rem;
+    padding: 1rem 0;    /* arriba y abajo, nada en los lados para que ocupe todo el ancho */
     display: none;
-    width: 200px;
-    border-radius: 0 0 0 10px;
-    box-shadow: -2px 2px 10px rgba(0,0,0,0.5);
+    z-index: 1500;
+    border-radius: 0 0 10px 10px; /* bordes redondeados abajo */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.5);
   }
 
   .nav-list.open {
@@ -165,10 +170,13 @@ const toggleMenu = () => {
   }
 
   .nav-item {
-    padding: 1rem;
+    padding: 1rem 2rem; /* más relleno lateral para que se vea bien */
     font-size: 1.2rem;
+    border-bottom: 1px solid #444;
   }
 }
+
+
 
 </style>
 
