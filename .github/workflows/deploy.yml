@@ -1,4 +1,4 @@
-name: Deploy Vue.js app to GitHub Pages
+name: Deploy to GitHub Pages
 
 on:
   push:
@@ -8,15 +8,14 @@ on:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
+      - name: Checkout
+        uses: actions/checkout@v4
 
       - name: Setup Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '20.19.0' # o usa '20.19.0' si prefieres LTS
 
       - name: Install dependencies
         run: npm install
@@ -28,7 +27,5 @@ jobs:
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: dist
-          # 👇 importante si estás usando Vite con base: '/nombre-repo/'
-          cname: isaias04.github.io
+          publish_dir: ./dist
 
