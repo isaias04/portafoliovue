@@ -252,6 +252,13 @@ h2 {
   line-height: 1.6;
   color: #ffffff;
 }
+.correo {
+  word-break: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;     /* Asegura que haga salto de línea */
+  width: 100%;
+  font-size: 0.9rem;       /* Ajusta tamaño si es necesario */
+}
 
 .tarjetas {
   display: flex;
@@ -401,10 +408,16 @@ h2 {
 
 /* Responsive */
 @media (max-width: 768px) {
+   
   .tarjetas {
     display: flex;
     flex-direction: column;
     gap: 1rem;
+  }
+  .correo {
+    font-size: 0.85rem;
+    display: block;
+    white-space: normal;
   }
 
   .layout {
