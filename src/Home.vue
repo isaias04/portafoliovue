@@ -430,6 +430,9 @@ h2 {
 
   .contenido-tarjeta {
     padding-left: 0;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    word-break: break-word;
   }
 
   .carrusel-contenedor {
