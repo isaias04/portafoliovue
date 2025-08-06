@@ -1,5 +1,6 @@
 <script setup>
 import { ref } from 'vue';
+
 const navegacion = ref([
   { id: 1, nombre: 'Home', enlace: '#Home' },
   { id: 2, nombre: 'Experiencia', enlace: '#Experiencia' },
@@ -7,14 +8,28 @@ const navegacion = ref([
   { id: 4, nombre: 'Portafolio', enlace: '#Portafolio' },
   { id: 5, nombre: 'Contact', enlace: '#Contact' }
 ]);
+
+const menuAbierto = ref(false);
+
+const toggleMenu = () => {
+  menuAbierto.value = !menuAbierto.value;
+};
 </script>
 
 <template>
   <nav class="navbar">
-    <div class="navbar-menu">
-      <ul class="nav-list">
+    <div class="navbar-container">
+      <!-- Botón hamburguesa -->
+      <button class="hamburger" @click="toggleMenu">
+        <span :class="{ 'active': menuAbierto }"></span>
+        <span :class="{ 'active': menuAbierto }"></span>
+        <span :class="{ 'active': menuAbierto }"></span>
+      </button>
+
+      <!-- Menú -->
+      <ul class="nav-list" :class="{ 'open': menuAbierto }">
         <li v-for="nav in navegacion" :key="nav.nombre">
-          <a :href="nav.enlace" class="nav-item">{{ nav.nombre }}</a>
+          <a :href="nav.enlace" class="nav-item" @click="menuAbierto = false">{{ nav.nombre }}</a>
         </li>
       </ul>
     </div>
@@ -22,24 +37,56 @@ const navegacion = ref([
 </template>
 
 <style scoped>
+/* Contenedor principal */
 .navbar {
   padding: 1rem 2rem;
   backdrop-filter: blur(12px);
   position: sticky;
   top: 0;
   z-index: 1000;
-  
+  background-color: rgba(0, 0, 0, 0.6);
 }
 
-.navbar-menu {
+.navbar-container {
   max-width: 1200px;
   margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
+/* Botón hamburguesa */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: #f0f0f0;
+  transition: all 0.3s ease;
+}
+
+.hamburger span.active:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger span.active:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger span.active:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* Menú */
 .nav-list {
   display: flex;
-  justify-content: center;
-  align-items: center;
   gap: 2rem;
   list-style: none;
   padding: 0;
@@ -74,6 +121,33 @@ const navegacion = ref([
 
 .nav-item:hover::after {
   width: 100%;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-list {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    background: rgba(0, 0, 0, 0.9);
+    padding: 1rem;
+    display: none;
+  }
+
+  .nav-list.open {
+    display: flex;
+  }
+
+  .nav-item {
+    padding: 1rem;
+    font-size: 1.2rem;
+  }
 }
 </style>
 

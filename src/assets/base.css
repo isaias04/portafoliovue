@@ -105,3 +105,42 @@ section h2{
 section h3{
   color: rgb(209, 183, 148);
 }
+/* Responsive: móviles */
+@media (max-width: 768px) {
+  section {
+    padding: 1rem;
+    margin: 1rem 0;
+  }
+
+  section h2 {
+    font-size: 1.6rem;
+  }
+
+  section h3 {
+    font-size: 1.2rem;
+  }
+
+  body {
+    font-size: 14px;
+  }
+}
+
+/* Responsive: pantallas pequeñas como tablets */
+@media (max-width: 992px) {
+  section {
+    padding: 1.5rem;
+  }
+
+  section h2 {
+    font-size: 1.8rem;
+  }
+
+  section h3 {
+    font-size: 1.3rem;
+  }
+
+  body {
+    font-size: 14.5px;
+  }
+
+}
