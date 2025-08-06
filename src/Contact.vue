@@ -7,6 +7,9 @@ const email = ref('')
 const message = ref('')
 const success = ref('')
 const error = ref('')
+const verCV = () => {
+  window.open('/portafoliovue/curriculum-v1.pdf', '_blank');
+}
 
 // Reemplaza estos valores con los tuyos
 const SERVICE_ID = 'service_3glbd4y'
@@ -39,20 +42,22 @@ function enviarMensaje() {
       error.value = 'Error al enviar el mensaje.'
       console.error(err)
     })
+    
 }
 </script>
 
 <template>
-    <h2>Contacto</h2>
+     <h2>Contacto</h2>
   <div class="contact-container">
-    
-
     <form @submit.prevent="enviarMensaje">
       <input type="text" v-model="name" placeholder="Tu nombre" />
       <input type="email" v-model="email" placeholder="Tu correo" />
       <textarea v-model="message" placeholder="Tu mensaje..."></textarea>
 
-      <button type="submit">Enviar</button>
+      <div class="botones-contacto">
+        <button type="submit">Enviar</button>
+        <button type="button" class="btn-descargar" @click="verCV">📄 Ver CV</button>
+      </div>
 
       <p v-if="success" class="success">{{ success }}</p>
       <p v-if="error" class="error">{{ error }}</p>
@@ -96,6 +101,25 @@ button {
   transition: all 0.3s ease;
 }
 
+.btn-descargar {
+  background-color: #f9a826;
+  color: #000;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  display: inline-block;
+  transition: background 0.3s ease;
+  margin-top: 1rem;
+}
+
+.btn-descargar:hover {
+  background-color: #ffbe40;
+  color: #000;
+}
+
+
 button:hover {
   background-color: #f9a826;
   color: #1a1a1a;
@@ -110,6 +134,18 @@ button:hover {
   color: #FF6347;
   margin-top: 1rem;
 }
+.botones-contacto {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-start;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+.botones-contacto button {
+  margin-top: 0;
+}
+
 
 </style>
 

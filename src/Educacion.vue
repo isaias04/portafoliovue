@@ -68,8 +68,9 @@ h2 {
 
 .lista-educacion {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
+  width: 100%;
 }
 
 .educacion-item {
@@ -120,5 +121,29 @@ h2 {
   color: #ddd;
   flex-grow: 1;
   user-select: none;
+}
+
+/* 📱 Responsivo para pantallas más pequeñas */
+@media (max-width: 420px) {
+  .lista-educacion {
+    grid-template-columns: 1fr; /* una tarjeta por fila */
+    gap: 1rem;
+  }
+
+  .educacion-item {
+    padding: 1rem 1rem;
+  }
+
+  h2 {
+    font-size: 1.7rem;
+  }
+
+  .educacion-item h3 {
+    font-size: 1.2rem;
+  }
+
+  .descripcion {
+    font-size: 0.9rem;
+  }
 }
 </style>

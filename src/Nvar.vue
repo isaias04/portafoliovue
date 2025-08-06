@@ -55,7 +55,7 @@ const toggleMenu = () => {
   max-width: 1200px;
   margin: 0 auto;
   display: flex;
-  justify-content: center; /* centra el contenido horizontalmente */
+  justify-content: center; /* menú centrado en PC */
   align-items: center;
 }
 
@@ -138,6 +138,10 @@ const toggleMenu = () => {
 
 /* Responsive */
 @media (max-width: 768px) {
+  .navbar-container {
+    justify-content: flex-end; /* menú hamburguesa alineado a la derecha en móvil */
+  }
+
   .hamburger {
     display: flex;
   }
@@ -145,12 +149,15 @@ const toggleMenu = () => {
   .nav-list {
     position: absolute;
     top: 70px;
-    left: 0;
-    right: 0;
+    right: 0;  /* alineado al costado derecho */
+    left: auto;
     flex-direction: column;
     background: rgba(0, 0, 0, 0.9);
     padding: 1rem;
     display: none;
+    width: 200px;
+    border-radius: 0 0 0 10px;
+    box-shadow: -2px 2px 10px rgba(0,0,0,0.5);
   }
 
   .nav-list.open {
@@ -162,6 +169,7 @@ const toggleMenu = () => {
     font-size: 1.2rem;
   }
 }
+
 </style>
 
 
