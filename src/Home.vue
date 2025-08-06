@@ -393,7 +393,14 @@ h2 {
 
 /* Responsive */
 @media (max-width: 768px) {
+  .tarjetas {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
   .layout {
+    display: flex;
     flex-direction: column;
     padding: 1rem;
   }
@@ -405,13 +412,14 @@ h2 {
 
   .contenido {
     padding: 1rem;
+    width: 100%;
   }
 
   .tarjeta {
-    flex-direction: column;
-    align-items: flex-start;
-    flex: 1 1 100%;
-    max-width: 100%;
+    flex: 1 1 100% !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    margin-bottom: 1rem;
   }
 
   .icono-grande {
@@ -425,8 +433,21 @@ h2 {
   }
 
   .carrusel-contenedor {
+    width: 100% !important;
     padding: 1rem 0;
+    overflow: hidden;
+  }
+
+  .carrusel {
+    width: 100% !important;
+  }
+
+  .carrusel-item {
+    width: 100% !important;
+    flex: 0 0 100%;
+    box-sizing: border-box;
   }
 }
+
 </style>
 
