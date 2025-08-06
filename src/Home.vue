@@ -40,6 +40,12 @@ const contactos = [
     icono: ['fab', 'whatsapp'],  // faWhatsapp
     url: 'https://wa.me/50379705056'  // enlace correcto para WhatsApp
   },
+{
+    tipo: 'CV',
+    valor: 'Ver CV',
+    icono: '📄',  // También podrías usar FontAwesome si lo prefieres
+    url: '/portafoliovue/curriculum-v1.pdf'
+  }
 ]
 
 const habilidades = [
@@ -59,6 +65,7 @@ const habilidades = [
     nivel: 80,
   }
 ]
+
 
 const iconosCarrusel = [
   { icono: ['fab', 'php'], color: '#8993be' },

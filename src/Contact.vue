@@ -7,13 +7,11 @@ const email = ref('')
 const message = ref('')
 const success = ref('')
 const error = ref('')
-const verCV = () => {
-  window.open('/portafoliovue/curriculum-v1.pdf', '_blank');
-}
 
-// Reemplaza estos valores con los tuyos
-const SERVICE_ID = 'service_3glbd4y'
-const TEMPLATE_ID = 'template_9ta5v9r'
+
+// Reemplazar valores con tus credenciales de EmailJS
+const SERVICE_ID = 'default_service'
+const TEMPLATE_ID = 'template_0i76w9i'
 const PUBLIC_KEY = 'e3R04PFufH6qy0wIZ'
 
 function enviarMensaje() {
@@ -56,7 +54,6 @@ function enviarMensaje() {
 
       <div class="botones-contacto">
         <button type="submit">Enviar</button>
-        <button type="button" class="btn-descargar" @click="verCV">📄 Ver CV</button>
       </div>
 
       <p v-if="success" class="success">{{ success }}</p>

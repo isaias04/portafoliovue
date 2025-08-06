@@ -139,7 +139,7 @@ const toggleMenu = () => {
 /* Responsive */
 @media (max-width: 768px) {
   .navbar {
-    background: rgba(242, 102, 9, 0.9); /* fondo sólido oscuro en móvil */
+    background: rgba(15, 14, 14, 0.9); /* fondo sólido oscuro en móvil */
     backdrop-filter: none; /* quitar blur en móvil */
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
   }
