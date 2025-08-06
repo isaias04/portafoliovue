@@ -28,5 +28,7 @@ jobs:
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
-          publish_branch: gh-pages
+          publish_dir: dist
+          # 👇 importante si estás usando Vite con base: '/nombre-repo/'
+          cname: isaias04.github.io
+
